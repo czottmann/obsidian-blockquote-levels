@@ -1,0 +1,10 @@
+{
+  "id": "obsidian-blockquote-levels",
+  "name": "Blockquote Levels",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Adds commands for increasing/decreasing the blockquote level of the current line or selection.",
+  "author": "Carlo Zottmann",
+  "authorUrl": "https://github.com/czottmann",
+  "isDesktopOnly": true
+}
