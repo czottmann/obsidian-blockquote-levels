@@ -1,15 +1,32 @@
-# Copy Search URL
+# Blockquote Levels
 
-This plugin adds a button to [Obsidian](https://obsidian.md)'s search view.
-Clicking it will copy the [Obsidian URL](https://help.obsidian.md/Advanced+topics/Using+obsidian+URI#Action+search)
-for the current search to the clipboard.
+This plugin for [Obsidian](https://obsidian.md) adds commands for
+increasing/decreasing the blockquote level of the current line or selection(s).
 
-![Showcase GIF: both editor and search view are open, a search for "code" is done, then a mouse click on the new "Copy Obsidian search URL" is done, the result is manually pasted in the editor, then another search is done for "note", the button is clicked, and the result is pasted into the editor as well, show a different URL](https://raw.githubusercontent.com/czottmann/obsidian-copy-search-url/master/showcase.gif)
+![Showcase GIF: TODO](showcase.gif)
+
+
+## Usage
+
+The plugin introduces two new commands, "Blockquote Levels: Increase" and
+"Blockquote Levels: Decrease".
+
+"Increase" adds a Markdown blockquote prefix (`>`) to the current line, the
+current selection or selections.  Subsequent calls will add subsequent prefixes,
+thus increasing the quote levels.
+
+"Decrease" removes the first Markdown blockquote prefix (`>`) from the current
+line, the current selection or selections.  Mix'n'match is fine as each line is
+processed individually; when the selected lines sport different quote levels,
+only one prefix (`>`) is removed from each line (where present).
+
+Out of the box the plugin doesn't set hotkeys, set them yourself as you see fit,
+or trigger the commands using the command palette.  The World is your oyster!
 
 
 ## Installation
 
-1. Search for "Copy Search URL" in Obsidian's community plugins browser.
+1. Search for "Blockquote Levels" in Obsidian's community plugins browser.
 2. Enable the plugin in your Obsidian settings under "Community plugins".
 
 That's it.
@@ -18,20 +35,11 @@ That's it.
 ## Installation via BRAT (for pre-releases or betas)
 
 1. Install [BRAT](https://github.com/TfTHacker/obsidian42-brat).
-2. Add "Copy Search URL" to BRAT:
+2. Add "Blockquote Levels" to BRAT:
     1. Open "Obsidian42 - BRAT" via Settings → Community Plugins
     2. Click "Add Beta plugin"
-    3. Use the repository address `czottmann/obsidian-copy-search-url`
-3. Enable "Copy Search URL" under Settings → Options → Community Plugins
-
-
-## Please note
-
-This plugin adds functionality (a button) to a core plugin. The jury's out
-whether that a idea is a wise one, tho — either way, here we are. ;)
-
-I wanted this functionality for a while so I've built it myself.  It was a good
-learning experience for me.
+    3. Use the repository address `czottmann/obsidian-blockquote-levels`
+3. Enable "Blockquote Levels" under Settings → Options → Community Plugins
 
 
 ## Development
@@ -46,8 +54,6 @@ it watch for file changes.
 - the [obsidian-tasks](https://github.com/obsidian-tasks-group/obsidian-tasks)
   crew for the "starter templates" for the GitHub Action workflow and the handy
   `release.sh` script
-- the humans of [Discord channel `#plugin-dev`](https://discord.com/channels/686053708261228577/840286264964022302)
-  for pointing me in the right direction
 
 
 ## Author
