@@ -1,11 +1,9 @@
-<img src="readme-assets/blockquote-levels-256.png" style="height: 128px" alt="Plugin logo thingie: a chevron, a plus, a chevron">
+<img src="readme-assets/blockquote-levels-256.png" align="left" height="128" alt="Plugin logo thingie: a chevron, a plus, a chevron">
 
 # Blockquote Levels
 
 This plugin for [Obsidian](https://obsidian.md) adds commands for
 increasing/decreasing the blockquote level of the current line or selection(s).
-
-![Showcase GIF](readme-assets/showcase.gif)
 
 
 ## Usage
@@ -24,6 +22,11 @@ only one prefix (`>`) is removed from each line (where present).
 
 Out of the box the plugin doesn't set hotkeys, set them yourself as you see fit,
 or trigger the commands using the command palette.  The World is your oyster!
+
+
+## Showcase
+
+![Showcase GIF](readme-assets/showcase.gif)
 
 
 ## Installation
