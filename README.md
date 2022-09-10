@@ -1,9 +1,11 @@
+<img src="readme-assets/blocks.png" style="height: 64px;" alt="Plugin logo thingie: a chevron, a plus, a chevron">
+
 # Blockquote Levels
 
 This plugin for [Obsidian](https://obsidian.md) adds commands for
 increasing/decreasing the blockquote level of the current line or selection(s).
 
-![Showcase GIF: TODO](showcase.gif)
+![Showcase GIF](readme-assets/showcase.gif)
 
 
 ## Usage
