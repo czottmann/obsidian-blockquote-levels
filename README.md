@@ -1,4 +1,4 @@
-<img src="readme-assets/blocks.png" style="height: 64px;" alt="Plugin logo thingie: a chevron, a plus, a chevron">
+<img src="readme-assets/blockquote-levels-256.png" style="height: 128px" alt="Plugin logo thingie: a chevron, a plus, a chevron">
 
 # Blockquote Levels
 
