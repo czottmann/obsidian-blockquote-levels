@@ -1,32 +1,24 @@
-<img src="readme-assets/blockquote-levels-256.png" align="left" height="128" alt="Plugin logo thingie: a chevron, a plus, a chevron">
+<img src="https://raw.githubusercontent.com/czottmann/obsidian-blockquote-levels/main/readme-assets/blockquote-levels-256.png" height="128" alt="Plugin logo thingie: a chevron, a plus, a chevron">
 
 # Blockquote Levels
 
-This plugin for [Obsidian](https://obsidian.md) adds commands for
-increasing/decreasing the blockquote level of the current line or selection(s).
+This plugin for [Obsidian](https://obsidian.md) adds commands for increasing/decreasing the blockquote level of the current line or selection(s).
 
 
 ## Usage
 
-The plugin introduces two new commands, "Blockquote Levels: Increase" and
-"Blockquote Levels: Decrease".
+The plugin introduces two new commands, "Blockquote Levels: Increase" and "Blockquote Levels: Decrease".
 
-"Increase" adds a Markdown blockquote prefix (`>`) to the current line, the
-current selection or selections.  Subsequent calls will add subsequent prefixes,
-thus increasing the quote levels.
+"Increase" adds a Markdown blockquote prefix (`>`) to the current line, the current selection or selections.  Subsequent calls will add subsequent prefixes, thus increasing the quote levels.
 
-"Decrease" removes the first Markdown blockquote prefix (`>`) from the current
-line, the current selection or selections.  Mix'n'match is fine as each line is
-processed individually; when the selected lines sport different quote levels,
-only one prefix (`>`) is removed from each line (where present).
+"Decrease" removes the first Markdown blockquote prefix (`>`) from the current line, the current selection or selections.  Mix'n'match is fine as each line is processed individually; when the selected lines sport different quote levels, only one prefix (`>`) is removed from each line (where present).
 
-Out of the box the plugin doesn't set hotkeys, set them yourself as you see fit,
-or trigger the commands using the command palette.  The World is your oyster!
+Out of the box the plugin doesn't set hotkeys, set them yourself as you see fit, or trigger the commands using the command palette.  The World is your oyster!
 
 
 ## Showcase
 
-![Showcase GIF](readme-assets/showcase.gif)
+![Showcase GIF](https://raw.githubusercontent.com/czottmann/obsidian-blockquote-levels/main/readme-assets/showcase.gif)
 
 
 ## Installation
@@ -49,16 +41,12 @@ That's it.
 
 ## Development
 
-Clone the repository, run `pnpm install` OR `npm install` to install the
-dependencies.  Afterwards, run `pnpm dev` OR `npm run dev` to compile and have
-it watch for file changes.
+Clone the repository, run `pnpm install` OR `npm install` to install the dependencies.  Afterwards, run `pnpm dev` OR `npm run dev` to compile and have it watch for file changes.
 
 
 ## Thanks to …
 
-- the [obsidian-tasks](https://github.com/obsidian-tasks-group/obsidian-tasks)
-  crew for the "starter templates" for the GitHub Action workflow and the handy
-  `release.sh` script
+- the [obsidian-tasks](https://github.com/obsidian-tasks-group/obsidian-tasks) crew for the "starter templates" for the GitHub Action workflow and the handy  `release.sh` script
 
 
 ## Author
@@ -68,4 +56,4 @@ Carlo Zottmann, <carlo@zottmann.org>, https://zottmann.org/
 
 ## License
 
-MIT, see [LICENSE.md](LICENSE.md).
+MIT, see [LICENSE.md](https://github.com/czottmann/obsidian-blockquote-levels/blob/main/LICENSE.md).
