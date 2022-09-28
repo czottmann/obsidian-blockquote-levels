@@ -1,9 +1,12 @@
 import {
+  App,
   Editor,
   EditorSelection,
   EditorSelectionOrCaret,
   MarkdownView,
   Plugin,
+  PluginSettingTab,
+  Setting,
 } from "obsidian";
 import {
   LineProcessor,
@@ -11,8 +14,21 @@ import {
   SelectionProcessor,
 } from "./types";
 
+interface BlockquoteLevelsSettings {
+  spaceBetweenPrefixes: boolean;
+}
+
+const DEFAULT_SETTINGS: BlockquoteLevelsSettings = {
+  spaceBetweenPrefixes: false,
+};
+
 export default class BlockquoteLevels extends Plugin {
+  settings: BlockquoteLevelsSettings;
+
   async onload() {
+    await this.loadSettings();
+    this.addSettingTab(new BlockquoteLevelsSettingTab(this.app, this));
+
     this.addCommand({
       id: "blockquote-levels-increase",
       name: "Increase",
@@ -38,13 +54,21 @@ export default class BlockquoteLevels extends Plugin {
     });
   }
 
-  onunload() {
+  onunload() {}
+
+  async loadSettings() {
+    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+  }
+
+  async saveSettings() {
+    await this.saveData(this.settings);
   }
 
   private increaseLevelForSelections(editor: Editor) {
+    const prefix = this.settings.spaceBetweenPrefixes ? "> " : ">";
     this.processSelections(
       editor,
-      (line: string) => /^>/.test(line) ? `>${line}` : `> ${line}`,
+      (line: string) => /^>/.test(line) ? `${prefix}${line}` : `> ${line}`,
     );
   }
 
@@ -129,5 +153,38 @@ export default class BlockquoteLevels extends Plugin {
     // Set correct new cursor position, which also clears the selection
     const cursorOffset = editor.getLine(line).length - origLineLength;
     editor.setCursor({ line, ch: ch + cursorOffset });
+  }
+}
+
+class BlockquoteLevelsSettingTab extends PluginSettingTab {
+  plugin: BlockquoteLevels;
+
+  constructor(app: App, plugin: BlockquoteLevels) {
+    super(app, plugin);
+    this.plugin = plugin;
+  }
+
+  display(): void {
+    const { containerEl } = this;
+
+    containerEl.empty();
+    containerEl.createEl("h2", { text: "Blockquote Levels Settings" });
+
+    new Setting(containerEl)
+      .setName("Use a space between subsequent blockquote prefixes")
+      .setDesc('Disabled: ">>> quote", Enabled: "> > > quote"')
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.spaceBetweenPrefixes)
+          .onChange(async (value) => {
+            console.log(
+              "[Blockquote Levels] " +
+                "Use spaces between subsequent blockquote prefixes: " +
+                value,
+            );
+            this.plugin.settings.spaceBetweenPrefixes = value;
+            await this.plugin.saveSettings();
+          })
+      );
   }
 }
