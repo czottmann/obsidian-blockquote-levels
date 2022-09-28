@@ -1,6 +1,6 @@
 {
   "name": "obsidian-blockquote-levels",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This plugin for Obsidian (https://obsidian.md) adds commands for increasing/decreasing the blockquote level of the current line or selection.",
   "main": "main.js",
   "scripts": {
