@@ -23,8 +23,9 @@ Out of the box the plugin doesn't set hotkeys, set them yourself as you see fit,
 
 ## Installation
 
-1. Search for "Blockquote Levels" in Obsidian's community plugins browser.
-2. Enable the plugin in your Obsidian settings under "Community plugins".
+1. Search for "Blockquote Levels" in Obsidian's community plugins browser. ([This link should bring it up.](https://obsidian.md/plugins?id=zottmann))
+2. Install it.
+3. Enable the plugin in your Obsidian settings under "Community plugins".
 
 That's it.
 
