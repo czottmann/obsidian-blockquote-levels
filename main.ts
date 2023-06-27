@@ -16,10 +16,12 @@ import {
 
 interface BlockquoteLevelsSettings {
   spaceBetweenPrefixes: boolean;
+  removeSpaceAfterPrefix: boolean; // New setting
 }
 
 const DEFAULT_SETTINGS: BlockquoteLevelsSettings = {
   spaceBetweenPrefixes: false,
+  removeSpaceAfterPrefix: false, // Default value for the new setting
 };
 
 export default class BlockquoteLevels extends Plugin {
@@ -68,7 +70,12 @@ export default class BlockquoteLevels extends Plugin {
     const prefix = this.settings.spaceBetweenPrefixes ? "> " : ">";
     this.processSelections(
       editor,
-      (line: string) => /^>/.test(line) ? `${prefix}${line}` : `> ${line}`,
+      (line: string) => {
+        if (this.settings.removeSpaceAfterPrefix) {
+          return /^>/.test(line) ? `${prefix.trim()}${line}` : `>${line}`;
+        }
+        return /^>/.test(line) ? `${prefix}${line}` : `> ${line}`;
+      },
     );
   }
 
@@ -183,6 +190,24 @@ class BlockquoteLevelsSettingTab extends PluginSettingTab {
                 value,
             );
             this.plugin.settings.spaceBetweenPrefixes = value;
+            await this.plugin.saveSettings();          
+	  })
+      );
+
+    // New setting
+    new Setting(containerEl)
+      .setName("Remove the space after blockquote prefixes")
+      .setDesc('Disabled: ">>> quote", Enabled: ">>>quote"')
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.removeSpaceAfterPrefix)
+          .onChange(async (value) => {
+            console.log(
+              "[Blockquote Levels] " +
+                "Remove the space after blockquote prefixes: " +
+                value,
+            );
+            this.plugin.settings.removeSpaceAfterPrefix = value;
             await this.plugin.saveSettings();
           })
       );
