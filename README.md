@@ -21,6 +21,15 @@ Out of the box the plugin doesn't set hotkeys, set them yourself as you see fit,
 ![Showcase GIF](https://raw.githubusercontent.com/czottmann/obsidian-blockquote-levels/main/readme-assets/showcase.gif)
 
 
+## Bug Reports & Discussions
+
+For bug reports please use this repo's Issues section — thank you!
+
+I've moved all plugin **discussions** to the ActionsDotWork Forum which is a hub for both my Obsidian plugins and the macOS/iOS productivity apps I'm building: [Carlo's Obsidian Plugins - ActionsDotWork Forum](https://forum.actions.work/c/obsidian-plugins/8).
+
+The forum supports single-sign-on via GitHub, Apple and Google, meaning you can log in with your GitHub account.
+
+
 ## Installation
 
 1. Search for "Blockquote Levels" in Obsidian's community plugins browser. ([This link should bring it up.](https://obsidian.md/plugins?id=zottmann))
